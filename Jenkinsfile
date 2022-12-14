@@ -19,12 +19,12 @@ node {
         usernameVariable: 'MVN_PASSWORD')]) {
 
         withGradle {
-          sh '''
+          sh """
             ./gradlew -i --stacktrace publish \
-                -PMVN_USERNAME=$MVN_USERNAME \
-                -PMVN_PASSWORD=$MVN_PASSWORD \
-                -PMVN_VERSION=1.$BUILD_NUMBER
-          '''
+                -PMVN_USERNAME=${MVN_USERNAME} \
+                -PMVN_PASSWORD=${MVN_PASSWORD} \
+                -PMVN_VERSION=1.${BUILD_NUMBER}
+          """
         }  
      }
   }  
