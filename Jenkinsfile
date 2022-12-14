@@ -28,5 +28,12 @@ node {
         }  
      }
   }  
+
+  stage('Post') {
+    jacoco()
+    junit 'lib/build/test-results/test/*.xml'
+    def pmd = scanForIssues tool: pmd(pattern: 'lib/build/reports/pmd/*.xml')
+    publishIssues issues: [pmd]
+  }
   
 }
