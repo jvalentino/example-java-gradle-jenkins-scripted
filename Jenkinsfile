@@ -15,8 +15,8 @@ node {
   stage('Publish') {
      withCredentials([usernamePassword(
         credentialsId: 'github-publish-maven', 
-        passwordVariable: 'MVN_USERNAME', 
-        usernameVariable: 'MVN_PASSWORD')]) {
+        passwordVariable: 'MVN_PASSWORD', 
+        usernameVariable: 'MVN_USERNAME')]) {
 
         withGradle {
           sh """
