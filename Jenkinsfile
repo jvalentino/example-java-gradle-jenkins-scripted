@@ -32,7 +32,7 @@ node {
   stage('Post') {
     jacoco()
     junit 'lib/build/test-results/test/*.xml'
-    def pmd = sscanForIssues tool: [$class: 'Pmd'], pattern: 'lib/build/reports/pmd/*.xml'
+    def pmd = scanForIssues tool: [$class: 'Pmd'], pattern: 'lib/build/reports/pmd/*.xml'
     publishIssues issues: [pmd]
   }
   
