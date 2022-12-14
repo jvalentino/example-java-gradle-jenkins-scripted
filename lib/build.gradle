@@ -76,7 +76,7 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/jvalentino/example-java-gradle-lib-4")
+            url = uri("https://maven.pkg.github.com/jvalentino/example-java-gradle-jenkins-scripted")
             credentials {
                 username = project.getProperties().get("MVN_USERNAME")
                 password = project.getProperties().get("MVN_PASSWORD")
